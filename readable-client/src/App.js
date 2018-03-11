@@ -54,7 +54,7 @@ class App extends Component {
   function mapDispatchToProps(dispatch) {
     return {
       loadPosts: (posts) => dispatch(actions.loadPosts(posts)),
-      loadCategories: (categories) => dispatch.(actions.loadCategories(categories))
+      loadCategories: (categories) => dispatch(actions.loadCategories(categories))
     }
   }
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
