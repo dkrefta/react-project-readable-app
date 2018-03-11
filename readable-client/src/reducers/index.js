@@ -160,14 +160,14 @@ function prefrences(state = {}, action) {
     case SET_SORTING_PREFERENCE_BY_DATE:
       return {
         ...state,
-        ['sorting']: 'byDate'
+        sorting: 'byDate'
       };
 
     // set sorting prefrence by score
     case SET_SORTING_PREFERENCE_BY_SCORE:
       return {
         ...state,
-        ['sorting']: 'byScore'
+        sorting: 'byScore'
       };
 
     // any other action: return all prefrences
