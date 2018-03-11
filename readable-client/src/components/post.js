@@ -15,7 +15,7 @@ import EditButtons from './edit-buttons';
 import PostForm from '../forms/post-form';
 
 class Post extends Component {
-  static PropTypes = {
+  static propTypes = {
     post: PropTypes.object.isRequired,
     is_detail: PropTypes.bool,
   }

@@ -19,6 +19,7 @@
     "react-timeago": "^3.4.3",
     "redux": "^3.7.2",
     "semantic-ui-react": "^0.78.3",
+    "sort-by": "^1.2.0",
     "sortby": "^0.0.2",
     "timeago-react": "^2.0.0",
     "timeago.js": "^3.0.2"
