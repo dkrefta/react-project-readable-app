@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 import {connect} from 'react-redux';
 
-import {getSortedPostsArray} from '../utils/helper';
+import {getSortedPostsArray} from '../utils/helpers';
 import Post from '../components/post';
 import PostForm from '../forms/post-form';
 import SortButtons from '../components/sort-buttons';
