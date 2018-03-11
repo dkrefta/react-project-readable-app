@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
 import {ButtonGroup, Button, Glyphicon} from 'react-bootstrap';
 
 class Score extends Component {

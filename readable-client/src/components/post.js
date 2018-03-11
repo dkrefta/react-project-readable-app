@@ -103,7 +103,7 @@ deletePost() {
       if (is_detail) {
         return <h1>{post.title}</h1>;
       } else {
-        return <Link to={'/${post.category}/${post.id}'} ><h2>{post.title}</h2></Link>;
+        return <Link to={`/${post.category}/${post.id}`} ><h2>{post.title}</h2></Link>;
       }
     }
 

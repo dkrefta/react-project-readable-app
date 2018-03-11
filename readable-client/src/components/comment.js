@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
-import TimeAgo from 'timeago-react';
+import timeago from 'timeago.js';
 import Modal from 'react-modal';
 
 import APIHelper from '../utils/api-helper';
@@ -100,7 +100,7 @@ class Comment extends Component {
 
   render() {
     const {comment} = this.props
-    const date = TimeAgo().format(comment.timestamp);
+    const date = timeago().format(comment.timestamp);
 
     return (
       <div>
