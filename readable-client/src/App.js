@@ -5,7 +5,7 @@ import './App.css';
 
 import {Switch, Route, withRouter} from 'react-router-dom';
 
-import Navigation from './components/navigation-bar';
+import NavigationBar from './components/navigation-bar';
 import PostsPage from './pages/posts-page';
 import Category from './pages/category-page';
 import PostDetailsPage from './page/post-details-page';
