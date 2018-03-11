@@ -6,7 +6,7 @@ import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 
-import TimeAgo from 'timeago-react';
+import timeago from 'timeago.js';
 import Modal from 'react-modal';
 
 import APIHelper from '../utils/api-helper';
@@ -116,7 +116,7 @@ deletePost() {
     }
   render() {
     const {post} = this.props
-    const date = TimeAgo().format(post.timestamp);
+    const date = timeago().format(post.timestamp);
     const {is_detail} = this.props;
 
     return (
