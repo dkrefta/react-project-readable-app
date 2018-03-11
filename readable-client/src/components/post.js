@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PropTYpes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import {Link, withRouter} from 'react-router-dom';
 
@@ -15,8 +15,8 @@ import EditButtons from './edit-buttons';
 import PostForm from '../forms/post-form';
 
 class Post extends Component {
-  static propTypes = {
-    post: PropTypes.object.isRequired
+  static PropTypes = {
+    post: PropTypes.object.isRequired,
     is_detail: PropTypes.bool,
   }
 
@@ -50,9 +50,9 @@ class Post extends Component {
   }
 
 deletePost() {
-  if(window.confirm('You really want to delete the post?')) {
+  if(window.confirm('You really want to delete this post?')) {
     const post_id = this.props.post.id
-    APIHelper.deletePost(post_id).then()) => {
+    APIHelper.deletePost(post_id).then(() => {
       this.props.deletePost ({
         type: actions.DELETE_POST,
         post_id
@@ -114,19 +114,24 @@ deletePost() {
         return null;
       }
     }
-return (
-  <div>
-    {this.generateTitle(post, is_detail)}
-    <p> {date} | by {post.author} | in <Link to={'/${post.category}'}>{post.category}</Link></p>
-    <p>{post.body}</p>
-    <Score score={post.voteScore} onUpvote={() => {this.upvotePost()}} onDownvote={() => {this.downvotePost()}} />
-    {this.generateEditButtons(is_detail)}
-    {this.generateModal(post)}
-    <hr/>
-    </div>
-    );
-};
-}
+  render() {
+    const {post} = this.props
+    const date = timeago().format(post.timestamp);
+    const {is_detail} = this.props;
+
+    return (
+         <div>
+           {this.generateTitle(post, is_detail)}
+           <p>{date} | by {post.author} | in <Link to={`/${post.category}`}>{post.category}</Link></p>
+           <p>{post.body}</p>
+           <Score score={post.voteScore} onUpvote={() => {this.upvotePost()}} onDownvote={() => {this.downvotePost()}} />
+           {this.generateEditButtons(is_detail)}
+           {this.generateModal(post)}
+           <hr/>
+         </div>
+       );
+     };
+   }
 
 function mapStateToProps ({ posts}) {
   return {posts}
@@ -139,4 +144,4 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-export default withRouter(mapStateToProps, mapDispatchToProps)(Post))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Post))

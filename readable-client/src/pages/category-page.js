@@ -8,11 +8,11 @@ import {connect} from 'react-redux';
 import {getSortedPostsArray} from '../utils/helper';
 import Post from '../components/post';
 import PostForm from '../forms/post-form';
-import SortButtons '../components/sort-buttons';
+import SortButtons from '../components/sort-buttons';
 
 class CategoryPage extends Component {
-  static PropTypes = {
-    posts: Proptypes.object.isRequired
+  static propTypes = {
+    posts: PropTypes.object.isRequired
   }
 
   isCategoryAvailable() {
