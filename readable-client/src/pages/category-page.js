@@ -46,6 +46,7 @@ class CategoryPage extends Component {
       const postsArray = getSortedPostsArray(posts, sorting);
       const categoryPosts = postsArray.filter(p => (p.category === category_name));
 
+/* Generate Title by Category Name */
       return (
         <div>
           {this.generateTitle(category_name)}

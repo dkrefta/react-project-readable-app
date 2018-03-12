@@ -41,7 +41,7 @@ class PostDetailsPage extends Component {
             {postComments.map((c) => (<Comment key={c.id} comment={c}/>))}
           </ol>
           <div className="addCommentContainer">
-            <h3>Add Comment</h3>
+            <h3>Add Comment Here</h3>
             <CommentForm parent_id={post_id}/>
           </div>
         </div>

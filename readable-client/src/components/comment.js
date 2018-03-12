@@ -92,7 +92,7 @@ class Comment extends Component {
         closeTimeoutMS={0}
         shouldCloseOnOverlayClick={true}
         contentLabel="Edit Comment">
-        <h1>Edit Comment</h1>
+        <h1>Edit Comment Here</h1>
         <CommentForm originalComment={comment} parent_id={comment.parentId} onSubmit={() => {this.closeModal()}} onCancel={() => {this.closeModal()}}/>
       </Modal>
     )

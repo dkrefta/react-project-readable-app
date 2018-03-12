@@ -47,51 +47,44 @@ class PostForm extends Component {
     }
   }
 
-  // Return true if all author, title and body inputs has text
   getFormValidationState() {
     const {author, category, title, body} = this.state;
     return (author < 1 || title < 1 || body < 1 || category === 'select');
   }
 
-  // update state whenever input text is changed
   handleChange(event) {
     const {name, value} = event.target;
     this.setState({ [name]: value });
   }
 
-  // handle form submission
   handleSubmit(event) {
     event.preventDefault();
 
-    // validate form inputs
     if (this.getFormValidationState()) {
-      console.error("Author and comment body are required to add a comment");
+      console.error("Author and comment body are not completed");
       return;
     }
 
     const {originalPost} = this.props;
-    if (originalPost) { // should edit an existing post
+    if (originalPost) {
       this.editPost();
-    } else { // should create a new post
+    } else {
       this.createPost();
     }
-    // call onSubmit function (if available)
+
     const {onSubmit} = this.props;
     if (onSubmit) {
       onSubmit();
     }
   }
 
-  // handle cancellation
   handleCancel() {
-    // call onCancel function (if available)
     const {onCancel} = this.props;
     if (onCancel) {
       onCancel();
     }
   }
 
-  // create a new post
   createPost() {
     const {author, category, title, body} = this.state;
 
@@ -100,12 +93,10 @@ class PostForm extends Component {
         type: actions.ADD_POST,
         post: newPost
       });
-      // reset state after submitting form
       this.setState(this.initialState);
     })
   }
 
-  // edit existing post
   editPost() {
     const {originalPost} = this.props;
     const {author, category, title, body} = this.state;

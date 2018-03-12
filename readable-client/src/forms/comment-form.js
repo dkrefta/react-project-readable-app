@@ -34,52 +34,44 @@ class CommentForm extends Component {
       this.setState({author: originalComment.author, body: originalComment.body});
     }
   }
-
-  // Return true if both author and body inputs has text
   getFormValidationState() {
     const {author, body} = this.state;
     return (author < 1 || body < 1);
   }
 
-  // update state whenever input text is changed
   handleChange(event) {
     const {name, value} = event.target;
     this.setState({ [name]: value });
   }
 
-  // handle form submission
   handleSubmit(event) {
     event.preventDefault();
 
-    // validate form inputs
     if (this.getFormValidationState()) {
       console.error("Author and comment body are required to add a comment");
       return;
     }
 
     const {originalComment} = this.props;
-    if (originalComment) { // should edit an existing comment
+    if (originalComment) {
       this.editComment();
-    } else { // should create a new comment
+    } else {
       this.createComment();
     }
-    // call onSubmit function (if available)
+
     const {onSubmit} = this.props;
     if (onSubmit) {
       onSubmit();
     }
   }
 
-  // handle cancellation
   handleCancel() {
-    // call onCancel function (if available)
     const {onCancel} = this.props;
     if (onCancel) {
       onCancel();
     }
   }
 
-  // create a new comment
   createComment() {
     const {parent_id} = this.props;
     const {author, body} = this.state;
@@ -89,12 +81,10 @@ class CommentForm extends Component {
         type: actions.ADD_COMMENT,
         comment: newComment
       });
-      // reset state after submitting form
       this.setState(this.initialState);
     })
   }
 
-  // edit existing comment
   editComment() {
     const {originalComment} = this.props;
     const {author, body} = this.state;

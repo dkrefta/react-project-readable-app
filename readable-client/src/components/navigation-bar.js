@@ -10,14 +10,14 @@ class NavigationBar extends Component {
       <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <LinkContainer to='/'><a>Readable!</a></LinkContainer>
+            <LinkContainer to='/'><a>Udacity Readable Project S2!</a></LinkContainer>
             </Navbar.Brand>
             <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
                 <LinkContainer to="/"><NavItem>Posts</NavItem></LinkContainer>
-                <NavItem href="https://github.com/dkrefta/reactnd-project-readable-starter">Github Repo</NavItem>
+                <NavItem href="https://github.com/dkrefta/reactnd-project-readable-starter">Github Diego Krefta</NavItem>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>

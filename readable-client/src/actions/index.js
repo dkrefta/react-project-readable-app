@@ -17,9 +17,8 @@ export const LOAD_CATEGORIES = 'LOAD_CATEGORIES';
 export const SET_SORTING_PREFERENCE_BY_DATE = 'SET_SORTING_PREFERENCE_BY_DATE';
 export const SET_SORTING_PREFERENCE_BY_SCORE = 'SET_SORTING_PREFERENCE_BY_SCORE';
 
-/****************************************************************************/
-/*                          Posts action creators                           */
-/****************************************************************************/
+
+/*                        Post Actions                        */
 
 export function loadPosts({posts}) {
   return {type: LOAD_POSTS, posts};
@@ -50,9 +49,7 @@ export function loadComments({comments}) {
 }
 
 
-/****************************************************************************/
-/*                        Comments action creators                          */
-/****************************************************************************/
+/*                        Comments action                      */
 
 export function addComment({comment}) {
   return {type: ADD_COMMENT, comment};
@@ -75,18 +72,16 @@ export function deleteComment({comment_id}) {
 }
 
 
-/****************************************************************************/
-/*                       Categories action creators                         */
-/****************************************************************************/
+/*                       Categories action                       */
 
 export function loadCategories({categories}) {
   return {type: LOAD_CATEGORIES, categories};
 }
 
 
-/****************************************************************************/
-/*                       Prefrences action creators                         */
-/****************************************************************************/
+
+/*                       Prefrences action                        */
+
 
 export function setSortingPreferenceByDate() {
   return {type: SET_SORTING_PREFERENCE_BY_DATE};

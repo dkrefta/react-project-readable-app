@@ -42,8 +42,8 @@ class SortButtons extends Component {
         <h4>Sort Posts</h4>
         <ButtonToolbar>
         <ToggleButtonGroup type="radio" name="options" defaultValue={this.getActiveButton()}>
-          <ToggleButton value={1} onClick={() => {this.sortByDate()}}><strong>By Date</strong> newer on top</ToggleButton>
-          <ToggleButton value={2} onClick={() => {this.sortByScore()}}><strong>By Score</strong> higher on top</ToggleButton>
+          <ToggleButton value={1} onClick={() => {this.sortByDate()}}><strong>Filter By Date</strong> Newer on Top</ToggleButton>
+          <ToggleButton value={2} onClick={() => {this.sortByScore()}}><strong>Filter By Score</strong> Higher on Top</ToggleButton>
         </ToggleButtonGroup>
       </ButtonToolbar>
       </div>
