@@ -9,6 +9,7 @@ import NavigationBar from './components/navigation-bar';
 import PostsPage from './pages/posts-page';
 import CategoryPage from './pages/category-page';
 import PostDetailsPage from './pages/post-details-page';
+import NotFound from './components/NotFound';
 
 import {connect} from 'react-redux';
 
@@ -43,6 +44,7 @@ class App extends Component {
             <Route exact path='/' component={PostsPage}/>
             <Route exact path='/:category_name' component={CategoryPage}/>
             <Route exact path='/:category_name/:post_id' component={PostDetailsPage}/>
+            <Route component={NotFound} />
           </Switch>
         </div>
       </div>
@@ -50,8 +52,8 @@ class App extends Component {
   }
 }
 
-function mapStateToProps() {
-
+const mapStateToProps = (state) => {
+return {...state}
 }
 
 function mapDispatchToProps(dispatch) {
@@ -61,4 +63,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect( mapStateToProps, mapDispatchToProps)(App));
