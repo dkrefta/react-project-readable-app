@@ -2,10 +2,6 @@ import {guid} from './helpers';
 
 class APIHelper {
 
-  /****************************************************************************/
-  /*                                 Methods                                  */
-  /****************************************************************************/
-
   /**
    ** Get all categories.
    */
@@ -139,9 +135,6 @@ class APIHelper {
     return this._deleteObject(this._COMMENT_URL(comment_id));
   }
 
-  /****************************************************************************/
-  /*                                   URLs                                   */
-  /****************************************************************************/
 
   static get _AUTH_KEY() {
     return "superSecureKey;)";
@@ -180,13 +173,6 @@ class APIHelper {
     return `${this._COMMENTS_URL}${comment_id}/`
   }
 
-  /****************************************************************************/
-  /*                                 Helpers                                  */
-  /****************************************************************************/
-
-  /**
-  ** Generic private helper function to form a server request.
-  */
   static _makeRequest(url, method, body = null, keyPath = null) {
     return new Promise((resolve, reject) => {
       var headers = new Headers();
@@ -216,31 +202,20 @@ class APIHelper {
       });
     });
   }
-
-  /**
-   ** Generic private helper function to get a json object from server.
-   */
   static _getObject(url, keyPath = null) {
     return this._makeRequest(url, 'GET', null, keyPath : keyPath);
   }
 
-  /**
-  ** Generic private helper function to post a json object from server.
-   */
   static _postObject(url, body, keyPath = null) {
     return this._makeRequest(url, 'POST', body, keyPath : keyPath);
   }
 
-  /**
-   ** Generic private helper function to delete an object from server.
-   */
+
   static _deleteObject(url, keyPath = null) {
     return this._makeRequest(url, 'DELETE', null, keyPath : keyPath);
   }
 
-  /**
-   ** Generic private helper function to edit an object from server.
-   */
+
    static _putObject(url, body, keyPath = null) {
      return this._makeRequest(url, 'PUT', body, keyPath : keyPath);
    }

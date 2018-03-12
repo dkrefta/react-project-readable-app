@@ -34,7 +34,7 @@ class App extends Component {
       this.props.loadCategories({type: actions.LOAD_CATEGORIES, categories});
     });
   }
-
+/* Render Route Path */
   render() {
     return (
       <div className="App">
