@@ -42,6 +42,7 @@ class App extends Component {
         <div className='container'>
           <Switch>
             <Route exact path='/' component={PostsPage}/>
+              <Route exact path='/404' component={NotFound} />
             <Route exact path='/:category_name' component={CategoryPage}/>
             <Route exact path='/:category_name/:post_id' component={PostDetailsPage}/>
             <Route component={NotFound} />

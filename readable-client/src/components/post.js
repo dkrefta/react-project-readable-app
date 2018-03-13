@@ -108,11 +108,7 @@ deletePost() {
     }
 
     generateEditButtons(is_detail) {
-      if (is_detail) {
         return <EditButtons onEdit={() =>{this.editPost()}} onDelete={() => {this.deletePost()}}/>;
-      }else {
-        return null;
-      }
     }
   render() {
     const {post} = this.props
@@ -122,7 +118,7 @@ deletePost() {
     return (
          <div>
            {this.generateTitle(post, is_detail)}
-           <p>{date} | by {post.author} | in <Link to={`/${post.category}`}>{post.category}</Link></p>
+           <p>{date} | by {post.author} | in <Link to={`/${post.category}`}>{post.category}</Link> | {post.commentCount} comment{post.commentCount > 1 ? 's' : ''}</p>
            <p>{post.body}</p>
            <Score score={post.voteScore} onUpvote={() => {this.upvotePost()}} onDownvote={() => {this.downvotePost()}} />
            {this.generateEditButtons(is_detail)}
