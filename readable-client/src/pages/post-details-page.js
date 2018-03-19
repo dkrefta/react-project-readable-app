@@ -10,7 +10,7 @@
 	import NotFound from '../components/NotFound';
 
 		class PostDetailsPage extends Component {
-		componentWillMount () {
+		componentDidMount () {
 			const { post_id } = this.props.match.params;
 			APIHelper.fetchPostComments(post_id).then(comments => {
 		  this.props.loadComments({ type: actions.LOAD_COMMENTS, comments });

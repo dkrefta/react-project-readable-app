@@ -44,7 +44,7 @@ class App extends Component {
             <Route exact path='/' component={PostsPage}/>
             <Route exact path='/:category_name' component={CategoryPage}/>
             <Route exact path='/:category_name/:post_id' component={PostDetailsPage}/>
-              <Route path="*" component={NotFound} />
+            <Route exact path="*" component={NotFound} />
           </Switch>
         </div>
       </div>
