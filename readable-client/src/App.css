@@ -34,3 +34,6 @@ ol {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+select#postCategory{
+  padding: 3px 12px;
+}
