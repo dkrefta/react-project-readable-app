@@ -9,8 +9,10 @@ import {getSortedPostsArray} from '../utils/helpers';
 import Post from '../components/post';
 import PostForm from '../forms/post-form';
 import SortButtons from '../components/sort-buttons';
+import NotFound from '../components/NotFound';
 
 class CategoryPage extends Component {
+  debugger;
   static propTypes = {
     posts: PropTypes.object.isRequired
   }
@@ -24,9 +26,11 @@ class CategoryPage extends Component {
   generateTitle(category_name) {
     if(!this.isCategoryAvailable()) {
       return (
-        <div>
-          <h1> Category incorrect or not right </h1>
-          </div>
+        <NotFound/>
+
+        //<div>
+        //  <h1> Category incorrect or not right </h1>
+        //  </div>
       );
     } else {
       return (
